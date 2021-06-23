@@ -7,9 +7,10 @@ class fun(commands.Cog):
     
     
 
-    @commands.command()
+    @commands.command(pass_context=True)
     async def ducky_say(self,ctx, *args):
         await ctx.send('{}'.format(' '.join(args)))
+        await ctx.message.delete()
 
 def setup(bot):
         bot.add_cog(fun(bot))
