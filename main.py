@@ -19,6 +19,7 @@ async def hello(ctx):
     await ctx.send("It's me Ducky")
 
 bot.load_extension("cogs.fun")
+bot.load_extension("cogs.reddit")
 
 
 
