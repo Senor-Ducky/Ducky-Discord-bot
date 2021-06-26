@@ -19,13 +19,13 @@ class reddit_scraper(commands.Cog):
 
     @commands.command(description="Fetch programming articles from any programming subreddit", pass_context = True)
     async def article(self, ctx, *args):
-        submission = next(x for x in reddit.subreddit('{}'.format(' '.join(args))).hot() if not x.stickied)
-        for submission in reddit.subreddit('{}'.format(' '.join(args))).hot(limit=10):
-            em = discord.Embed(title=submission.title, description=submission.selftext[:2048], url = submission.url, color=0xFF4301)        
-            em.add_field(name="Upvotes", value=submission.score, inline=False)
-            em.add_field(name="Comments", value=submission.num_comments, inline=False)
-            await ctx.send(embed = em)
-            await ctx.message.delete()
+        for submission in reddit.subreddit('{}'.format(' '.join(args))).hot(limit=12):
+            if not submission.stickied:
+                em = discord.Embed(title=submission.title, description=submission.selftext[:2048], url = submission.url, color=0xFF4301)        
+                em.add_field(name="Upvotes", value=submission.score, inline=False)
+                em.add_field(name="Comments", value=submission.num_comments, inline=False)
+                await ctx.send(embed = em)
+        await ctx.message.delete()
 
     @commands.command(description="fetch memes from any subreddit", pass_context = True)
     async def meme(self, ctx, *args):
