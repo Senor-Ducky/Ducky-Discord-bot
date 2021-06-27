@@ -20,6 +20,7 @@ async def hello(ctx):
 
 bot.load_extension("cogs.fun")
 bot.load_extension("cogs.reddit")
+bot.load_extension("cogs.better_programming")
 
 
 
