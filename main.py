@@ -22,6 +22,7 @@ bot.load_extension("cogs.fun")
 bot.load_extension("cogs.reddit")
 bot.load_extension("cogs.better_programming")
 bot.load_extension("cogs.dev")
+bot.load_extension("cogs.gsearch")
 
 
 
