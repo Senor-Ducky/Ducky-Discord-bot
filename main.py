@@ -8,7 +8,7 @@ from discord.ext import commands
 
 load_dotenv()
 
-bot = commands.Bot(command_prefix='!')
+bot = commands.Bot(command_prefix='+')
 
 @bot.event
 async def on_ready():
@@ -18,6 +18,8 @@ async def on_ready():
 async def hello(ctx):
     await ctx.send("It's me Ducky")
 
+
+bot.load_extension("cogs.moderation")
 bot.load_extension("cogs.fun")
 bot.load_extension("cogs.reddit")
 bot.load_extension("cogs.better_programming")
