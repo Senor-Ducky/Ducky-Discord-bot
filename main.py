@@ -26,6 +26,7 @@ bot.load_extension("cogs.better_programming")
 bot.load_extension("cogs.dev")
 bot.load_extension("cogs.gsearch")
 bot.load_extension("cogs.wikipedia_search")
+bot.load_extension("cogs.music")
 
 
 
